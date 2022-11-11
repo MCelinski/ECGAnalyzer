@@ -1,6 +1,7 @@
 import wfdb 
 import pandas as pd
 from wfdb import processing
+
 record = wfdb.rdrecord('signals/103', sampto=3000)
 annotation = wfdb.rdann('signals/103', 'atr', sampto=3000)
 sig, fields = wfdb.rdsamp('signals/103', channels=[0])
@@ -23,4 +24,3 @@ xqrs = processing.XQRS(sig=sig[:,0], fs=fields['fs'])
 xqrs.detect()
 
 wfdb.plot_items(signal=sig, ann_samp=[xqrs.qrs_inds])
-
