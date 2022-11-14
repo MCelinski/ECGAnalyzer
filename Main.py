@@ -8,12 +8,9 @@ from matplotlib import image
 matplotlib.use("TkAgg")
 import matplotlib.pyplot
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk 
-from matplotlib.figure import Figure
-from matplotlib.widgets import Cursor
 import numpy as np
 import tkinter as tk
 import tkinter.filedialog
-from tkinter import messagebox
 import os
 import wfdb
 from wfdb import processing
@@ -146,7 +143,7 @@ class App(customtkinter.CTk):
         
         self.toolbar = NavigationToolbar2Tk(self.canvas, self.frame_info)
         self.toolbar.config(background="#F2F2F2")
-
+ 
         self.toolbar.update()
         self.canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True) 
     
@@ -306,7 +303,9 @@ class App(customtkinter.CTk):
         rr_array = wfdb.ann2rr(ecg_path, 'atr', as_array=True,format='s',stop_time=record.sig_len)
         mean_rr = np.mean(rr_array)
         mean_hr = processing.calc_mean_hr(rr_array,rr_units='seconds')
-    
+        
+        qrs_inds = wfdb.processing.xqrs_detect(signalSample[:,0], fields['fs'], sampfrom=0, sampto=record.sig_len, conf=None, learn=True, verbose=True)
+
         
 
             
