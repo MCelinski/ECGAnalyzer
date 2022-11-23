@@ -24,8 +24,8 @@ customtkinter.set_default_color_theme("blue")
 customtkinter.deactivate_automatic_dpi_awareness()
 
 class App(customtkinter.CTk):
-    WIDTH = 1920
-    HEIGHT = 1024
+    WIDTH = 1600
+    HEIGHT = 900
     def __init__(self):
         super().__init__()
         self.title("Program do wyświetlania sygnałów ECG")
@@ -234,19 +234,19 @@ class App(customtkinter.CTk):
         figure_time =str(round((self.getedinput + self.step.get())/self.record1.fs,0)) 
         return_fig = wfdb.plot_wfdb( record=self.record1,plot_sym=True,title = f"file:{ecg_path[-8:]} Time: {round(self.step.get()/self.record1.fs,0)}s -{figure_time}s",
                     time_units='seconds',
-                    figsize=(5,4), ecg_grids='all',return_fig=True)
+                    figsize=(2,2), ecg_grids='all',return_fig=True)
         return_fig.set_facecolor("#F2F2F2")
         
         figure1_time =str(round((2*self.getedinput + self.step.get())/self.record1.fs,0)) 
         return_fig1 = wfdb.plot_wfdb( record=self.record2,plot_sym=True,title=f"file: {ecg_path[-8:]}  Time: {figure_time}s -{figure1_time}s",
                     time_units='seconds',
-                    figsize=(5,4), ecg_grids='all',return_fig=True,)
+                    figsize=(2,2), ecg_grids='all',return_fig=True,)
         return_fig1.set_facecolor("#F2F2F2")
         
         figure2_time =str(round((3*self.getedinput + self.step.get())/self.record1.fs,0)) 
         return_fig2 = wfdb.plot_wfdb( record=self.record3,plot_sym=True,title=f"file: {ecg_path[-8:]}  Time: {figure1_time} s- {figure2_time}s",
                     time_units='seconds',
-                    figsize=(5,4), ecg_grids='all',return_fig=True)
+                    figsize=(2,2), ecg_grids='all',return_fig=True)
         return_fig2.set_facecolor("#F2F2F2")
         
         
