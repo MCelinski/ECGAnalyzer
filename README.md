@@ -17,7 +17,7 @@ email: michalcelinski00@gmail.com
         <img src="readmeimages/ecgg.png" alt="Logo" width="80" height="80">
     </a>
     <p align="center">
-        ECGAnalyzer
+        ECGAnalyzer 
         <br />
     </p>
 

@@ -205,11 +205,9 @@ class App(customtkinter.CTk):
     def readRecords(self):
         global fields
         
-        signals, fields = wfdb.rdsamp(ecg_path,sampfrom=  self.step.get() , sampto = self.getedinput + self.step.get(),
-                                  channels=[0])
+        signals, fields = wfdb.rdsamp(ecg_path,sampfrom=  self.step.get() , sampto = self.getedinput + self.step.get())
         
-        self.record1 = wfdb.rdrecord(ecg_path,sampfrom=  self.step.get() , sampto = self.getedinput + self.step.get(),
-                                channels=[0])
+        self.record1 = wfdb.rdrecord(ecg_path,sampfrom=  self.step.get() , sampto = self.getedinput + self.step.get())
         
         self.record2 = wfdb.rdrecord(ecg_path, sampfrom =  self.getedinput + self.step.get(), sampto=  2 * self.getedinput + self.step.get(),
                                 channels=[0])
@@ -218,7 +216,6 @@ class App(customtkinter.CTk):
                                 channels=[0])
         
         self.annotation = wfdb.rdann(ecg_path, 'atr', self.step.get() , sampto = self.getedinput + self.step.get(),shift_samps=True)
-        # self.annotation_Info = wfdb.rdann(ecg_path, 'atr',sampto=300000)
         self.DrawSignals()
     
     def DrawSignals(self):
