@@ -17,7 +17,7 @@ email: michalcelinski00@gmail.com
         <img src="readmeimages/ecgg.png" alt="Logo" width="80" height="80">
     </a>
     <p align="center">
-        ECGAnalyzer 
+        <b>ECGAnalyzer</b>
         <br />
     </p>
 
@@ -78,6 +78,7 @@ To Add Annotation
 [![Adding Annotation][add-annotation]](readmeimages/ss3.png)
 
 :bangbang: Important :bangbang:
+
 If you want to impoort another data first you must chose view mode again to reload the canvas. Otherwise bugs may appeares.
 
 
