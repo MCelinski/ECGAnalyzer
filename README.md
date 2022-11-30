@@ -7,7 +7,7 @@ logo path: readmeimages/ecgg.png
 screenshot: readmeimages/ss1.png
 email: michalcelinski00@gmail.com
 -->
-
+![GitHub last commit](https://img.shields.io/github/last-commit/MCelinski/ECGAnalyzer?logo=GitHub)
 
 
 <!-- PROJECT LOGO -->
